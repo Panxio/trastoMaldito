@@ -6,7 +6,7 @@ describe('loadFlags', () => {
     const flags = loadFlags({});
 
     expect(flags).toEqual(Object.fromEntries(VULN_IDS.map((id) => [id, false])));
-    expect(VULN_IDS).toHaveLength(15);
+    expect(VULN_IDS).toHaveLength(16);
   });
 
   it('VULN_W1=on activa solo W1', () => {

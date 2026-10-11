@@ -10,6 +10,7 @@ import { registerProfile } from './profile.js';
 import { registerErrorHandlers } from './errors.js';
 import { registerOrders } from './orders.js';
 import { registerReviews } from './reviews.js';
+import { registerWebhooks } from './webhooks.js';
 import { secretoEfectivo } from './vulns/a2.js';
 import { registrarV1 } from './vulns/a4.js';
 import { registerW2Config } from './vulns/w2.js';
@@ -62,6 +63,7 @@ export function buildServer({ db, jwtSecret, uploadDir = './uploads' }: BuildOpt
     registerCart(app, { db });
     registerOrders(app, { db });
     registerReviews(app, { db });
+    registerWebhooks(app, { db });
     registerW2Config(app);
     // Siempre se llama; monta /api/v1 solo si VULN_A4=on (versión zombie).
     registrarV1(app, { db });

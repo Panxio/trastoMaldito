@@ -13,7 +13,7 @@ checked to confirm the fix blocks it.
 
 ## How it works
 
-- **15 vulnerabilities**, each with an ID, a `VULN_<ID>=on|off` flag, its own file in
+- **16 vulnerabilities**, each with an ID, a `VULN_<ID>=on|off` flag, its own file in
   `api/src/vulns/`, a teaching sheet (`fichas/`) and a spec (`specs/`). Sheets and specs are in
   Spanish.
 - **Everything is `off` by default** (the healthy store). `VULN_<ID>=on` enables the flaw. Flags are
@@ -73,6 +73,7 @@ how to practice it are in its sheet (Spanish).
 | `W6` | A10:2025 Mishandling of Exceptional Conditions | Payment and order status | [W6](fichas/W6.md) |
 | `A07` | A07:2025 Authentication Failures | Login | [A07](fichas/A07.md) |
 | `A09` | A09:2025 Security Logging & Alerting Failures | Auth and checkout | [A09](fichas/A09.md) |
+| `A08` | A08:2025 Software or Data Integrity Failures | Payment gateway webhook | [A08](fichas/A08.md) |
 | `A1` | API1:2023 Broken Object Level Authorization | Customer orders | [A1](fichas/A1.md) |
 | `A2` | API2:2023 Broken Authentication | Token session | [A2](fichas/A2.md) |
 | `A3` | API3:2023 Broken Object Property Level Authorization | Customer profile | [A3](fichas/A3.md) |

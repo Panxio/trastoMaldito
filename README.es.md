@@ -13,7 +13,7 @@ comprobar que la corrección lo bloquea.
 
 ## Cómo funciona
 
-- **15 vulnerabilidades**, cada una con un ID, un flag `VULN_<ID>=on|off`, un archivo propio en
+- **16 vulnerabilidades**, cada una con un ID, un flag `VULN_<ID>=on|off`, un archivo propio en
   `api/src/vulns/`, una ficha didáctica (`fichas/`) y una spec (`specs/`).
 - **Todo está `off` por defecto** (la tienda sana). Con `VULN_<ID>=on` se activa el defecto. Los flags
   se leen **una vez al arrancar**: para cambiar uno, reinicia la API.
@@ -72,6 +72,7 @@ corrección y cómo practicarlo está en su ficha.
 | `W6` | A10:2025 Mishandling of Exceptional Conditions | Pago y estado del pedido | [W6](fichas/W6.md) |
 | `A07` | A07:2025 Authentication Failures | Inicio de sesión | [A07](fichas/A07.md) |
 | `A09` | A09:2025 Security Logging & Alerting Failures | Auth y checkout | [A09](fichas/A09.md) |
+| `A08` | A08:2025 Software or Data Integrity Failures | Webhook de la pasarela de pago | [A08](fichas/A08.md) |
 | `A1` | API1:2023 Broken Object Level Authorization | Pedidos de los clientes | [A1](fichas/A1.md) |
 | `A2` | API2:2023 Broken Authentication | Sesión con token | [A2](fichas/A2.md) |
 | `A3` | API3:2023 Broken Object Property Level Authorization | Perfil del cliente | [A3](fichas/A3.md) |
