@@ -1,0 +1,24 @@
+{
+  "name": "trastomaldito",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "api",
+    "front"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,front -c blue,magenta \"npm run api\" \"npm run dev -w front\"",
+    "api": "tsx api/src/main.ts",
+    "seed": "tsx db/seed.ts",
+    "exploits": ".venv/bin/python exploits/run.py",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.60.0",
+    "concurrently": "^10.0.6",
+    "tsx": "^4.23.15"
+  }
+}

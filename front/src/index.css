@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+/* Sistema de diseño: ver docs/diseno-front.md */
+@theme {
+  --color-vacio: #0d0a12;
+  --color-tinta: #1a1424;
+  --color-hueso: #e9e2d0;
+  --color-ambar: #ffa81f;
+  --color-espectro: #4fe3e0;
+  --color-sangre: #c23b4a;
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+@layer base {
+  html {
+    background: var(--color-vacio);
+  }
+  body {
+    min-height: 100svh;
+    background: var(--color-vacio);
+    color: var(--color-hueso);
+    font-family: var(--font-serif);
+    font-variation-settings: "SOFT" 100;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  /* Barrido de CRT casi imperceptible sobre toda la página. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(to bottom, rgb(0 0 0 / 0.16) 0 1px, transparent 1px 3px);
+    opacity: 0.25;
+    z-index: 50;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-espectro);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: var(--color-ambar);
+    color: var(--color-vacio);
+  }
+  h1,
+  h2,
+  h3 {
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .voz-terminal {
+    font-family: var(--font-mono);
+  }
+  .boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    padding: 0.7rem 1.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .boton-primario {
+    background: var(--color-ambar);
+    color: var(--color-vacio);
+  }
+  .boton-primario:hover {
+    background: #ffbf4d;
+  }
+  .boton-contorno {
+    border: 1px solid color-mix(in srgb, var(--color-hueso) 45%, transparent);
+    color: var(--color-hueso);
+  }
+  .boton-contorno:hover {
+    border-color: var(--color-espectro);
+    color: var(--color-espectro);
+  }
+  .campo {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid color-mix(in srgb, var(--color-hueso) 25%, transparent);
+    background: var(--color-vacio);
+    padding: 0.55rem 0.75rem;
+    font-family: var(--font-mono);
+    color: var(--color-hueso);
+  }
+  .campo:focus {
+    border-color: var(--color-espectro);
+    outline: none;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-espectro) 40%, transparent);
+  }
+}
+
+/* Única animación no pedida por el usuario: la línea del terminal en el hero, una sola vez. */
+@keyframes escribir {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--largo, 41ch);
+  }
+}
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+.hero-linea {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.6ch solid var(--color-ambar);
+  animation: escribir 1.6s steps(41, end) 0.3s both, cursor 0.8s step-end 0.3s 4;
+}
+.hero-titular {
+  animation: aparecer 0.9s ease-out 2s both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-linea,
+  .hero-titular {
+    animation: none;
+  }
+  .hero-linea {
+    border-right-color: transparent;
+  }
+  body::after {
+    display: none;
+  }
+}

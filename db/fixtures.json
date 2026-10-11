@@ -1,0 +1,127 @@
+{
+  "_nota": "Datos 100% ficticios. Las claves son falsas, solo para el laboratorio.",
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@trastomaldito.test",
+      "name": "Ofelia Cárdenas Peña",
+      "rut": "15.678.901-1",
+      "commune": "Providencia",
+      "phone": "+56 9 0000 0001",
+      "role": "admin",
+      "password": "clave-falsa-lab-0"
+    },
+    {
+      "id": 2,
+      "email": "camila@trastomaldito.test",
+      "name": "Camila Soto Ibáñez",
+      "rut": "17.234.567-0",
+      "commune": "Ñuñoa",
+      "phone": "+56 9 0000 0002",
+      "role": "customer",
+      "password": "clave-falsa-lab-1"
+    },
+    {
+      "id": 3,
+      "email": "benjamin@trastomaldito.test",
+      "name": "Benjamín Arancibia Lagos",
+      "rut": "19.876.545-7",
+      "commune": "Valparaíso",
+      "phone": "+56 9 0000 0003",
+      "role": "customer",
+      "password": "clave-falsa-lab-2"
+    }
+  ],
+  "relics": [
+    {
+      "id": 1,
+      "name": "Espejo de la Viuda",
+      "description": "Espejo de marco ennegrecido. El anticuario asegura que no refleja a quien se mira de frente.",
+      "price_clp": 189990,
+      "stock": 3,
+      "image_url": "/img/espejo.png",
+      "published": 1
+    },
+    {
+      "id": 2,
+      "name": "Caja Musical de Valparaíso",
+      "description": "Caja de nogal con una melodía que se detiene sola a medianoche.",
+      "price_clp": 74500,
+      "stock": 5,
+      "image_url": "/img/caja-musical.png",
+      "published": 1
+    },
+    {
+      "id": 3,
+      "name": "Péndulo de Cerro Alegre",
+      "description": "Péndulo de bronce que oscila sin viento. Se entrega con su hilo original.",
+      "price_clp": 52990,
+      "stock": 8,
+      "image_url": "/img/pendulo.png",
+      "published": 1
+    },
+    {
+      "id": 4,
+      "name": "Rosario de Lirios Secos",
+      "description": "Rosario de cuentas de vidrio con lirios prensados. Según la etiqueta, data de 1923.",
+      "price_clp": 29990,
+      "stock": 12,
+      "image_url": "/img/rosario.png",
+      "published": 1
+    },
+    {
+      "id": 5,
+      "name": "Vela de Velorio Antigua",
+      "description": "Vela de sebo sin encender, con la cera fundida sobre un plato de loza.",
+      "price_clp": 12500,
+      "stock": 20,
+      "image_url": "/img/vela.png",
+      "published": 1
+    },
+    {
+      "id": 6,
+      "name": "Muñeca de Porcelana de Chillán",
+      "description": "Muñeca de ojos fijos. Se pide no dejarla sola en la habitación.",
+      "price_clp": 139900,
+      "stock": 2,
+      "image_url": "/img/muneca.png",
+      "published": 1
+    },
+    {
+      "id": 7,
+      "name": "Tintero de Sangre Seca (preventa)",
+      "description": "Preventa: ejemplar de cerámica negra que llegará con la próxima remesa.",
+      "price_clp": 215000,
+      "stock": 0,
+      "image_url": "/img/tintero.png",
+      "published": 0
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "customer_id": 2,
+      "status": "paid",
+      "total_clp": 134480,
+      "created_at": "2026-09-15T18:30:00Z",
+      "items": [
+        { "relic_id": 2, "qty": 1, "price_clp": 74500 },
+        { "relic_id": 4, "qty": 2, "price_clp": 29990 }
+      ]
+    },
+    {
+      "id": 2,
+      "customer_id": 3,
+      "status": "paid",
+      "total_clp": 90490,
+      "created_at": "2026-09-28T14:05:00Z",
+      "items": [
+        { "relic_id": 5, "qty": 3, "price_clp": 12500 },
+        { "relic_id": 3, "qty": 1, "price_clp": 52990 }
+      ]
+    }
+  ],
+  "coupons": [
+    { "code": "EXORCISMO", "discount_pct": 50 }
+  ]
+}
